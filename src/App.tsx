@@ -1,5 +1,12 @@
+import GlobalStyles from "./components/utils/GlobalStyling";
+
 function App() {
-  return <>giorgi</>;
+  return (
+    <>
+      <GlobalStyles />
+      giorgi
+    </>
+  );
 }
 
 export default App;
