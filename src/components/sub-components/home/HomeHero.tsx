@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { defaultTheme } from "../../utils/defaultTheme";
-import hero from "../../../../public/assets/home/desktop/hero.png";
+import hero from "/assets/home/desktop/hero.png";
 
 function HomeHero() {
   return (
@@ -27,15 +27,13 @@ function HomeHero() {
 export default HomeHero;
 
 const Container = styled.div`
-  width: 100%;
-  position: absolute;
-  left: 0;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 98px;
   background-color: ${defaultTheme.colors.chineseblack};
   padding: 0 20px;
+  margin-bottom: 120px;
 `;
 
 const Wrapper = styled.div`

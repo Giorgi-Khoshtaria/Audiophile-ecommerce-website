@@ -39,6 +39,7 @@ function Blogs() {
 export default Blogs;
 const Container = styled.div`
   margin-bottom: 200px;
+  width: 100%;
 `;
 
 const BlogOne = styled.div`

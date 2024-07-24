@@ -50,8 +50,6 @@ function Header() {
 export default Header;
 const Wrapper = styled.div`
   width: 100%;
-  position: absolute;
-  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;

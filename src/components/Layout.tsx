@@ -2,7 +2,7 @@ import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import Header from "./sub-components/Header";
 import { useEffect } from "react";
 import styled from "styled-components";
-import Footer from "./sub-components/Footer";
+// import Footer from "./sub-components/Footer";
 
 const navigationLinks: string[] = [
   "/home",
@@ -28,7 +28,6 @@ function Layout() {
     <Container>
       <Header />
       <Outlet />
-      <Footer />
     </Container>
   );
 }

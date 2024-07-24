@@ -1,16 +1,23 @@
 import React from "react";
 import HomeHero from "../sub-components/home/HomeHero";
 import HomeLayout from "../sub-components/home/HomeLayout";
+import styled from "styled-components";
 // import Navigation from "../sub-components/home/Navigation";
 
 function Home() {
   return (
-    <div>
+    <Container>
       <HomeHero />
       <HomeLayout />
       {/* <Navigation /> */}
-    </div>
+    </Container>
   );
 }
 
 export default Home;
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+`;
