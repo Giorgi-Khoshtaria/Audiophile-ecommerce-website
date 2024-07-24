@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { defaultTheme } from "../../utils/defaultTheme";
 import hero from "../../../../public/assets/home/desktop/hero.png";
 
@@ -14,7 +15,7 @@ function HomeHero() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <a href="">See Product</a>
+          <Link to="/headphones">See Product</Link>
         </Information>
         {/* <HeroImg></HeroImg> */}
         <Img src={hero} alt="" />

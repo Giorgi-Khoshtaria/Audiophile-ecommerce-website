@@ -86,6 +86,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 168px;
 `;
 const Wrapper = styled.div`
   width: 350px;

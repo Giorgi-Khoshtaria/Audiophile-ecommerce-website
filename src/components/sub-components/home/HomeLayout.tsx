@@ -2,11 +2,15 @@ import React from "react";
 import Navigation from "./Navigation";
 import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
+import Blogs from "./Blogs";
+import MainBlog from "./MainBlog";
 
 function HomeLayout() {
   return (
     <Container>
       <Navigation />
+      <Blogs />
+      <MainBlog />
     </Container>
   );
 }
