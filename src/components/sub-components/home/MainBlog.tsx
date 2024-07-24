@@ -6,7 +6,7 @@ import mainblog from "../../../../public//assets//shared/desktop/image-best-gear
 function MainBlog() {
   return (
     <Container>
-      <div>
+      <Information>
         <h1>
           Bringing you the <span>best</span> audio gear
         </h1>
@@ -18,8 +18,8 @@ function MainBlog() {
           store to meet some of the fantastic people who make Audiophile the
           best place to buy your portable audio equipment.
         </p>
-      </div>
-      <img src={mainblog} alt="" />
+      </Information>
+      <Image src={mainblog} alt="mainblog" />
     </Container>
   );
 }
@@ -30,4 +30,38 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 200px;
+`;
+
+const Information = styled.div`
+  width: 445px;
+  h1 {
+    color: ${defaultTheme.colors.black};
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44px; /* 110% */
+    letter-spacing: 1.429px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    span {
+      color: ${defaultTheme.colors.peru};
+    }
+  }
+  p {
+    color: ${defaultTheme.colors.black};
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 166.667% */
+    opacity: 0.5;
+  }
+`;
+
+const Image = styled.img`
+  width: 540px;
+  height: 588px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #f1f1f1;
 `;
