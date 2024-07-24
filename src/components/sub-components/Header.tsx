@@ -65,6 +65,8 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 35px 20px;
   background-color: ${defaultTheme.colors.chineseblack};
+  border-bottom: 1px solid ${defaultTheme.colors.gray};
+  z-index: 10;
 `;
 
 const Logo = styled.div`
@@ -92,6 +94,9 @@ const Li = styled.li`
     color: ${defaultTheme.colors.white};
     text-decoration: none;
     text-transform: uppercase;
+    &:hover {
+      color: ${defaultTheme.colors.peru};
+    }
   }
 `;
 

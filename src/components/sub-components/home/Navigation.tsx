@@ -130,5 +130,8 @@ const Info = styled.div`
     text-transform: uppercase;
     opacity: 0.5;
     text-decoration: none;
+    &:hover {
+      color: ${defaultTheme.colors.peru};
+    }
   }
 `;

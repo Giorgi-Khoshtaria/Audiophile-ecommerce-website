@@ -90,6 +90,9 @@ const Information = styled.div`
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
+    &:hover {
+      background-color: ${defaultTheme.colors.tangelo};
+    }
   }
 `;
 

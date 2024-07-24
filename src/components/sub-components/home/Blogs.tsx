@@ -53,6 +53,7 @@ const BlogOne = styled.div`
   padding: 95px 95px 0 114px;
   margin-bottom: 48px;
   overflow: hidden;
+
   img {
     transform: translateY(15px);
     width: 410.234px;
@@ -91,6 +92,9 @@ const BlogOne = styled.div`
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
+    &:hover {
+      background-color: ${defaultTheme.colors.gray};
+    }
   }
 `;
 
@@ -121,7 +125,6 @@ const BlogTwo = styled.div`
     width: 160px;
     height: 48px;
     flex-shrink: 0;
-    color: ${defaultTheme.colors.white};
     font-size: 13px;
     font-style: normal;
     font-weight: 700;
@@ -129,8 +132,14 @@ const BlogTwo = styled.div`
     letter-spacing: 1px;
     text-transform: uppercase;
     /* padding: 15px 29.5px 15px 31.5px; */
-    background-color: ${defaultTheme.colors.black};
+    background-color: transparent;
+    color: ${defaultTheme.colors.black};
+    border: 1px solid ${defaultTheme.colors.black};
     text-decoration: none;
+    &:hover {
+      background-color: ${defaultTheme.colors.black};
+      color: ${defaultTheme.colors.white};
+    }
   }
 `;
 const BlogThree = styled.div`
@@ -156,13 +165,13 @@ const BlogThreeInfo = styled.div`
     text-transform: uppercase;
   }
   a {
+    margin-top: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 160px;
     height: 48px;
     flex-shrink: 0;
-    color: ${defaultTheme.colors.white};
     font-size: 13px;
     font-style: normal;
     font-weight: 700;
@@ -170,8 +179,13 @@ const BlogThreeInfo = styled.div`
     letter-spacing: 1px;
     text-transform: uppercase;
     /* padding: 15px 29.5px 15px 31.5px; */
-    background-color: ${defaultTheme.colors.black};
+    background-color: transparent;
+    color: ${defaultTheme.colors.black};
+    border: 1px solid ${defaultTheme.colors.black};
     text-decoration: none;
-    margin-top: 32px;
+    &:hover {
+      background-color: ${defaultTheme.colors.black};
+      color: ${defaultTheme.colors.white};
+    }
   }
 `;
