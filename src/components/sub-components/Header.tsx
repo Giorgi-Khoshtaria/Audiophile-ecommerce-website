@@ -11,7 +11,7 @@ function Header() {
     <Wrapper>
       <Container>
         <Logo>
-          <Link to="/Home">
+          <Link to="/home">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="143"
