@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
 import Blogs from "./Blogs";
 import MainBlog from "./MainBlog";
+// import Footer from "../Footer";
 
 function HomeLayout() {
   return (
@@ -12,6 +13,7 @@ function HomeLayout() {
         <Navigation />
         <Blogs />
         <MainBlog />
+        {/* <Footer /> */}
       </Content>
     </Container>
   );

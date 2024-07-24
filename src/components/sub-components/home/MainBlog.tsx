@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
-import mainblog from "../../../../public//assets//shared/desktop/image-best-gear.jpg";
+import mainblog from "/assets/shared/desktop/image-best-gear.jpg";
 
 function MainBlog() {
   return (

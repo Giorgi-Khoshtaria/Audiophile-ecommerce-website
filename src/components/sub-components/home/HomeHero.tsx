@@ -88,6 +88,7 @@ const Information = styled.div`
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
     &:hover {
       background-color: ${defaultTheme.colors.tangelo};
     }

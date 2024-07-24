@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
 import { Link } from "react-router-dom";
-import headphones from "../../../../public/assets/shared/desktop/image-category-thumbnail-headphones.png";
-import earphones from "../../../../public/assets/shared/desktop/image-category-thumbnail-earphones.png";
-import speakers from "../../../../public/assets/shared/desktop/image-category-thumbnail-speakers.png";
+import headphones from "/assets/shared/desktop/image-category-thumbnail-headphones.png";
+import earphones from "/assets/shared/desktop/image-category-thumbnail-earphones.png";
+import speakers from "/assets/shared/desktop/image-category-thumbnail-speakers.png";
 
 function Navigation() {
   return (
@@ -130,6 +130,7 @@ const Info = styled.div`
     text-transform: uppercase;
     opacity: 0.5;
     text-decoration: none;
+    transition: color 0.3s ease-in-out;
     &:hover {
       color: ${defaultTheme.colors.peru};
     }

@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
 import { Link } from "react-router-dom";
-import patern from "../../../../public/assets/home/desktop/pattern-circles.svg";
-import blog1img from "../../../../public/assets/home/desktop/image-speaker-zx9.png";
-import blog2img from "../../../../public/assets/home/desktop/image-speaker-zx7.jpg";
-import blog3img from "../../../../public/assets/home/desktop/image-earphones-yx1.jpg";
+import patern from "/assets/home/desktop/pattern-circles.svg";
+import blog1img from "/assets/home/desktop/image-speaker-zx9.png";
+import blog2img from "/assets/home/desktop/image-speaker-zx7.jpg";
+import blog3img from "/assets/home/desktop/image-earphones-yx1.jpg";
 
 function Blogs() {
   return (
@@ -93,6 +93,7 @@ const BlogOne = styled.div`
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
     &:hover {
       background-color: ${defaultTheme.colors.gray};
     }
@@ -132,26 +133,29 @@ const BlogTwo = styled.div`
     line-height: normal;
     letter-spacing: 1px;
     text-transform: uppercase;
-    /* padding: 15px 29.5px 15px 31.5px; */
     background-color: transparent;
     color: ${defaultTheme.colors.black};
     border: 1px solid ${defaultTheme.colors.black};
     text-decoration: none;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
     &:hover {
       background-color: ${defaultTheme.colors.black};
       color: ${defaultTheme.colors.white};
     }
   }
 `;
+
 const BlogThree = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 `;
+
 const BlogThreeImg = styled.img`
   border-radius: 8px;
 `;
+
 const BlogThreeInfo = styled.div`
   padding: 101px 200px 101px 96.5px;
   background-color: ${defaultTheme.colors.flashwite};
@@ -179,11 +183,11 @@ const BlogThreeInfo = styled.div`
     line-height: normal;
     letter-spacing: 1px;
     text-transform: uppercase;
-    /* padding: 15px 29.5px 15px 31.5px; */
     background-color: transparent;
     color: ${defaultTheme.colors.black};
     border: 1px solid ${defaultTheme.colors.black};
     text-decoration: none;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
     &:hover {
       background-color: ${defaultTheme.colors.black};
       color: ${defaultTheme.colors.white};
