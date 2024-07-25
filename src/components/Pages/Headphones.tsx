@@ -5,6 +5,7 @@ import styled from "styled-components";
 import data from "../../data.json";
 import Navigation from "../sub-components/home/Navigation";
 import MainBlog from "../sub-components/home/MainBlog";
+import { useEffect } from "react";
 
 function Headphones() {
   // Filter the data to get all products with category "headphones"
@@ -15,6 +16,12 @@ function Headphones() {
   const productIndex = headphoneProducts[0];
   console.log(productIndex);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <div>
       <ProductsHero text="HEADPHONES" />

@@ -6,11 +6,18 @@ import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
 import Navigation from "../home/Navigation";
 import MainBlog from "../home/MainBlog";
+import { useEffect } from "react";
 
 function ProductDetails() {
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      // behavior: "smooth",
+    });
+  }, []);
 
   if (!id) {
     return <div>Invalid Product ID</div>;
