@@ -253,6 +253,10 @@ const AddCart = styled.button`
   border: 0;
   padding: 15px 30.5px 15px 34.5px;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: ${defaultTheme.colors.tangelo};
+  }
 `;
 const Fearures = styled.div`
   display: flex;

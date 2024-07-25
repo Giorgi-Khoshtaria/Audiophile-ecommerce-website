@@ -127,4 +127,8 @@ const AddCart = styled(Link)`
   padding: 15px 30.5px 15px 34.5px;
   cursor: pointer;
   text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: ${defaultTheme.colors.tangelo};
+  }
 `;
