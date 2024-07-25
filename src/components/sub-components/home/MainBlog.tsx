@@ -32,6 +32,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 200px;
+  /* padding: 0 20px; */
 `;
 
 const Information = styled.div`

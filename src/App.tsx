@@ -5,26 +5,32 @@ import Home from "./components/Pages/Home";
 import Headphones from "./components/Pages/Headphones";
 import Speakers from "./components/Pages/Speakers";
 import Earphones from "./components/Pages/Earphones";
+// import Products from "./components/Pages/Products";
+import ProductDetails from "./components/sub-components/product/ProductDetails";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
       {
-        path: "/Home",
+        path: "/home",
         element: <Home />,
       },
       {
-        path: "/HEADPHONES",
+        path: "/headphones",
         element: <Headphones />,
       },
       {
-        path: "/SPEAKERS",
+        path: "/speakers",
         element: <Speakers />,
       },
       {
-        path: "/EARPHONES",
+        path: "/earphones",
         element: <Earphones />,
+      },
+      {
+        path: "/:pathName/:id",
+        element: <ProductDetails />,
       },
     ],
   },

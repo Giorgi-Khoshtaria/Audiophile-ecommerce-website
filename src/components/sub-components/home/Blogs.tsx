@@ -6,8 +6,14 @@ import patern from "/assets/home/desktop/pattern-circles.svg";
 import blog1img from "/assets/home/desktop/image-speaker-zx9.png";
 import blog2img from "/assets/home/desktop/image-speaker-zx7.jpg";
 import blog3img from "/assets/home/desktop/image-earphones-yx1.jpg";
+import data from "../../../data.json";
 
 function Blogs() {
+  console.log(data);
+  const firstItem = data[4];
+  const secondItem = data[5];
+  const thirdItem = data[0];
+  console.log(thirdItem.id);
   return (
     <Container>
       <BlogOne>
@@ -18,18 +24,18 @@ function Blogs() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Link to="/speakers">See Product</Link>
+          <Link to={`/speakers/${firstItem.id}`}>See Product</Link>
         </div>
       </BlogOne>
       <BlogTwo>
         <h1>ZX7 SPEAKER</h1>
-        <a href="">See Product</a>
+        <Link to={`/speakers/${secondItem.id}`}>See Product</Link>
       </BlogTwo>
       <BlogThree>
         <BlogThreeImg src={blog3img} alt="blog 3" />
         <BlogThreeInfo>
           <h1>YX1 EARPHONES</h1>
-          <a href="">See Product</a>
+          <Link to={`/earphones/${thirdItem.id}`}>See Product</Link>
         </BlogThreeInfo>
       </BlogThree>
     </Container>
@@ -40,6 +46,7 @@ export default Blogs;
 const Container = styled.div`
   margin-bottom: 200px;
   width: 100%;
+  /* padding: 0 20px; */
 `;
 
 const BlogOne = styled.div`

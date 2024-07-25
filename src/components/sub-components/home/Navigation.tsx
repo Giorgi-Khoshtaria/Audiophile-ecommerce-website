@@ -87,6 +87,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 168px;
+  /* padding: 0 20px; */
 `;
 const Wrapper = styled.div`
   width: 350px;
