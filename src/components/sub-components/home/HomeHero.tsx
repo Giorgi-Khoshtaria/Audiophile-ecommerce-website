@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { defaultTheme } from "../../utils/defaultTheme";
 import hero from "/assets/home/desktop/hero.png";
+import data from "../../../data.json";
 
 function HomeHero() {
+  const product = data[2];
   return (
     <Container>
       <Wrapper>
@@ -15,7 +17,7 @@ function HomeHero() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Link to="/headphones">See Product</Link>
+          <Link to={`/${product.category}/${product.id}`}>See Product</Link>
         </Information>
         {/* <HeroImg></HeroImg> */}
         <Img src={hero} alt="" />
