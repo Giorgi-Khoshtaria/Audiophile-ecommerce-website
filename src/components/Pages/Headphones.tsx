@@ -11,7 +11,7 @@ function Headphones() {
   const headphoneProducts = data.filter(
     (item) => item.category === "headphones"
   );
-  console.log(headphoneProducts, "diidbwidvwbo");
+  console.log(headphoneProducts, "headphones");
   const productIndex = headphoneProducts[0];
   console.log(productIndex);
 
