@@ -101,14 +101,14 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${defaultTheme.colors.black};
+  background-color: ${defaultTheme.colors.chineseblack};
 `;
 const Container = styled.div`
   width: 1440px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: ${defaultTheme.colors.black};
+  background-color: ${defaultTheme.colors.chineseblack};
   padding: 75px 20px 48px 20px;
 `;
 const Content = styled.div`
