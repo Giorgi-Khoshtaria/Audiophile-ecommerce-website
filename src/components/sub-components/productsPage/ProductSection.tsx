@@ -36,7 +36,7 @@ function ProductSection({
         <ProductName>{name}</ProductName>
         <Description>{description}</Description>
         <Box>
-          <AddCart to={`/${category}/${id}`}>ADD TO CART</AddCart>
+          <AddCart to={`/${category}/${id}`}>SEE PRODUUCT</AddCart>
         </Box>
       </Info>
     </InformationContainer>

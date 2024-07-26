@@ -45,6 +45,10 @@ function ProductDetails() {
     const selectedProduct = data.find((item) => item.slug === slug);
     if (selectedProduct) {
       navigate(`/${selectedProduct.category}/${selectedProduct.id}`);
+      window.scrollTo({
+        top: 0,
+        // behavior: "smooth",
+      });
     }
   };
 
