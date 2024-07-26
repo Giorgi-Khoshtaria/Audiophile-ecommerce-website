@@ -5,6 +5,7 @@ import cart from "/assets/shared/desktop/icon-cart.svg";
 import CartItem from "./cart/CartItem";
 import { useCart } from "./cart/CartContext";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const navigation: string[] = ["home", "headphones", "speakers", "earphones"];
 
@@ -13,9 +14,23 @@ function Header() {
   const itemNumber = cartItems.length;
   const [total, setTotal] = useState(0);
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+
   const handleShowModal = () => {
     setShow(!show);
   };
+
+  const handleCheckout = () => {
+    if (itemNumber === 0) {
+      alert(
+        "Your cart is empty. Add items to the cart before proceeding to checkout."
+      );
+      return; // Do not navigate if the cart is empty
+    }
+    setShow(false); // Close the modal
+    navigate("/checkout"); // Navigate to the checkout page
+  };
+
   useEffect(() => {
     const calculatedTotal = cartItems.reduce(
       (acc, item) => acc + item.price * item.quantity,
@@ -60,31 +75,34 @@ function Header() {
           <Cart>
             <CartImage src={cart} alt="Cart" onClick={handleShowModal} />
             {show ? (
-              <CartModal>
-                <ModalHeader>
-                  <p>cart ({itemNumber})</p>
-                  <a onClick={clearCart}>Remove all</a>
-                </ModalHeader>
-                <div>
-                  {cartItems.map((item) => (
-                    <CartItem
-                      key={item.id}
-                      img={item.img}
-                      name={item.name}
-                      price={item.price}
-                      quantity={item.quantity}
-                      id={item.id}
-                    />
-                  ))}
-                </div>
-                <Total>
-                  <p>total</p>
-                  <span>${total}</span>
-                </Total>
-                <Checkout>
-                  <button>Checkout</button>
-                </Checkout>
-              </CartModal>
+              <div>
+                <Overllay onClick={handleShowModal}></Overllay>
+                <CartModal>
+                  <ModalHeader>
+                    <p>cart ({itemNumber})</p>
+                    <a onClick={clearCart}>Remove all</a>
+                  </ModalHeader>
+                  <div>
+                    {cartItems.map((item) => (
+                      <CartItem
+                        key={item.id}
+                        img={item.img}
+                        name={item.name}
+                        price={item.price}
+                        quantity={item.quantity}
+                        id={item.id}
+                      />
+                    ))}
+                  </div>
+                  <Total>
+                    <p>total</p>
+                    <span>${total}</span>
+                  </Total>
+                  <Checkout>
+                    <a onClick={handleCheckout}>Checkout</a>
+                  </Checkout>
+                </CartModal>
+              </div>
             ) : (
               ""
             )}
@@ -163,8 +181,9 @@ const CartImage = styled.img`
 `;
 
 const CartModal = styled.div`
+  z-index: 1111;
   position: absolute;
-  right: 0;
+  right: 100px;
   top: 80px;
   background-color: ${defaultTheme.colors.white};
   border-radius: 8px;
@@ -201,8 +220,10 @@ const Total = styled.div`
   }
 `;
 const Checkout = styled.div`
-  width: 100%;
-  button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
     width: 100%;
     text-align: center;
     color: ${defaultTheme.colors.white};
@@ -215,5 +236,15 @@ const Checkout = styled.div`
     background-color: ${defaultTheme.colors.peru};
     padding: 15px 60px 15px 65px;
     border: 0;
+    text-decoration: none;
   }
+`;
+const Overllay = styled.div`
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
 `;
