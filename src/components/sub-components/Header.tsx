@@ -1,12 +1,29 @@
-// import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { defaultTheme } from "../utils/defaultTheme";
 import cart from "/assets/shared/desktop/icon-cart.svg";
+import CartItem from "./cart/CartItem";
+import { useCart } from "./cart/CartContext";
+import { useState, useEffect } from "react";
 
 const navigation: string[] = ["home", "headphones", "speakers", "earphones"];
 
 function Header() {
+  const { clearCart, cartItems } = useCart();
+  const itemNumber = cartItems.length;
+  const [total, setTotal] = useState(0);
+  const [show, setShow] = useState(false);
+  const handleShowModal = () => {
+    setShow(!show);
+  };
+  useEffect(() => {
+    const calculatedTotal = cartItems.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
+    setTotal(calculatedTotal);
+  }, [cartItems]);
+
   return (
     <Wrapper>
       <Container>
@@ -41,7 +58,36 @@ function Header() {
             </Ul>
           </nav>
           <Cart>
-            <img src={cart} alt="" />
+            <CartImage src={cart} alt="Cart" onClick={handleShowModal} />
+            {show ? (
+              <CartModal>
+                <ModalHeader>
+                  <p>cart ({itemNumber})</p>
+                  <a onClick={clearCart}>Remove all</a>
+                </ModalHeader>
+                <div>
+                  {cartItems.map((item) => (
+                    <CartItem
+                      key={item.id}
+                      img={item.img}
+                      name={item.name}
+                      price={item.price}
+                      quantity={item.quantity}
+                      id={item.id}
+                    />
+                  ))}
+                </div>
+                <Total>
+                  <p>total</p>
+                  <span>${total}</span>
+                </Total>
+                <Checkout>
+                  <button>Checkout</button>
+                </Checkout>
+              </CartModal>
+            ) : (
+              ""
+            )}
           </Cart>
         </Content>
       </Container>
@@ -108,8 +154,66 @@ const Li = styled.li`
 `;
 
 const Cart = styled.div`
-  img {
-    width: 24px;
-    height: 24px;
+  cursor: pointer;
+  position: relative;
+`;
+const CartImage = styled.img`
+  width: 24px;
+  height: 24px;
+`;
+
+const CartModal = styled.div`
+  position: absolute;
+  right: 0;
+  top: 80px;
+  background-color: ${defaultTheme.colors.white};
+  border-radius: 8px;
+  padding: 32px;
+  width: 377px;
+`;
+const ModalHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const Total = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  p {
+    color: ${defaultTheme.colors.black};
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 166.667% */
+    opacity: 0.5;
+  }
+  span {
+    text-align: center;
+    color: ${defaultTheme.colors.black};
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+`;
+const Checkout = styled.div`
+  width: 100%;
+  button {
+    width: 100%;
+    text-align: center;
+    color: ${defaultTheme.colors.white};
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: ${defaultTheme.colors.peru};
+    padding: 15px 60px 15px 65px;
+    border: 0;
   }
 `;

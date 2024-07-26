@@ -1,22 +1,20 @@
-import { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import data from "../../../data.json";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
+import data from "../../../data.json";
 import { defaultTheme } from "../../utils/defaultTheme";
 import Navigation from "../home/Navigation";
 import MainBlog from "../home/MainBlog";
-import { useEffect } from "react";
+import { useCart } from "../cart/CartContext";
 
 function ProductDetails() {
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
+  const { addToCart, cartItems, updateQuantity } = useCart();
+
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      // behavior: "smooth",
-    });
+    window.scrollTo({ top: 0 });
   }, []);
 
   if (!id) {
@@ -33,22 +31,47 @@ function ProductDetails() {
   const includes = product.includes;
   const others = product.others;
 
-  const increaseCount = () => {
-    setCount((prevCount) => prevCount + 1);
+  const isItemInCart = cartItems.some(
+    (cartItem) => cartItem.id === product.id.toString()
+  );
+
+  const handleOrder = () => {
+    const cartItem = {
+      id: product.id.toString(),
+      name: product.name,
+      img: product.image.desktop,
+      price: product.price,
+      quantity: count,
+    };
+
+    if (!isItemInCart) {
+      addToCart(cartItem);
+    } else {
+      updateQuantity(product.id.toString(), count);
+    }
   };
 
-  const decreaseCount = () => {
-    setCount((prevCount) => (prevCount > 1 ? prevCount - 1 : 1));
+  const handleIncreaseCount = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+    if (isItemInCart) {
+      updateQuantity(product.id.toString(), newCount);
+    }
+  };
+
+  const handleDecreaseCount = () => {
+    const newCount = count > 1 ? count - 1 : 1;
+    setCount(newCount);
+    if (isItemInCart) {
+      updateQuantity(product.id.toString(), newCount);
+    }
   };
 
   const handleProductNavigation = (slug: string) => {
     const selectedProduct = data.find((item) => item.slug === slug);
     if (selectedProduct) {
       navigate(`/${selectedProduct.category}/${selectedProduct.id}`);
-      window.scrollTo({
-        top: 0,
-        // behavior: "smooth",
-      });
+      window.scrollTo({ top: 0 });
     }
   };
 
@@ -67,11 +90,11 @@ function ProductDetails() {
             <Price>${product.price}</Price>
             <Box>
               <Clicks>
-                <button onClick={increaseCount}>+</button>
+                <button onClick={handleIncreaseCount}>+</button>
                 <p>{count}</p>
-                <button onClick={decreaseCount}>-</button>
+                <button onClick={handleDecreaseCount}>-</button>
               </Clicks>
-              <AddCart>ADD TO CART</AddCart>
+              <AddCart onClick={handleOrder}>ADD TO CART</AddCart>
             </Box>
           </div>
         </Information>
@@ -225,7 +248,16 @@ const Clicks = styled.div`
   background-color: ${defaultTheme.colors.flashwite};
   margin-right: 16px;
   cursor: pointer;
-
+  p {
+    color: ${defaultTheme.colors.black};
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
   button {
     color: ${defaultTheme.colors.black};
     font-family: Manrope;
