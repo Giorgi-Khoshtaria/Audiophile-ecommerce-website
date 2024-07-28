@@ -1,17 +1,15 @@
-// import React from "react";
-
+import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
-interface CartItemProps {
+interface ItemsForModalProps {
   img: string;
   name: string;
   price: number;
   quantity: number;
 }
-
-function CheCkoutItem({ img, name, price, quantity }: CartItemProps) {
+function ItemsForModal({ img, name, price, quantity }: ItemsForModalProps) {
   return (
-    <div>
+    <Conatiner>
       <ItemContent>
         <ItemInfo>
           <ItemImage src={img} alt={name} />
@@ -21,27 +19,24 @@ function CheCkoutItem({ img, name, price, quantity }: CartItemProps) {
           </div>
         </ItemInfo>
 
-        <Clicks>
-          <p>x{quantity}</p>
-        </Clicks>
+        <Quantity>x{quantity}</Quantity>
       </ItemContent>
-    </div>
+    </Conatiner>
   );
 }
 
-export default CheCkoutItem;
-
+export default ItemsForModal;
+const Conatiner = styled.div`
+  /* width: 198px; */
+  background-color: ${defaultTheme.colors.flashwite};
+  /* border-radius: 8px; */
+`;
 const ItemContent = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 32px 0;
-  img {
-    width: 64px;
-    height: 64px;
-    margin-right: 16px;
-  }
+  padding: 33px 24px 25px 24px;
+  gap: 30px;
 `;
 
 const ItemInfo = styled.div`
@@ -51,12 +46,14 @@ const ItemInfo = styled.div`
 `;
 
 const ItemImage = styled.img`
-  width: 64px;
-  height: 64px;
-  margin-right: 16px;
+  width: 28px;
+  height: 32px;
+  flex-shrink: 0;
+  margin-right: 27px;
 `;
 
 const ItemName = styled.p`
+  width: 100px;
   color: ${defaultTheme.colors.black};
   font-size: 15px;
   font-style: normal;
@@ -72,23 +69,13 @@ const ItemPrice = styled.p`
   line-height: 25px; /* 178.571% */
   opacity: 0.5;
 `;
-const Clicks = styled.div`
-  width: 96px;
-  height: 32px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-
-  p {
-    color: ${defaultTheme.colors.black};
-    text-align: center;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+const Quantity = styled.p`
+  color: ${defaultTheme.colors.black};
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 `;
