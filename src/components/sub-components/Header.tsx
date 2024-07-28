@@ -237,6 +237,10 @@ const Checkout = styled.div`
     padding: 15px 60px 15px 65px;
     border: 0;
     text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    &:hover {
+      background-color: ${defaultTheme.colors.tangelo};
+    }
   }
 `;
 const Overllay = styled.div`

@@ -36,18 +36,18 @@ function ProductDetails() {
   );
 
   const handleOrder = () => {
-    const cartItem = {
-      id: product.id.toString(),
-      name: product.name,
-      img: product.image.desktop,
-      price: product.price,
-      quantity: count,
-    };
-
-    if (!isItemInCart) {
-      addToCart(cartItem);
-    } else {
+    if (isItemInCart) {
+      alert("This item is already in your cart. The quantity will be updated.");
       updateQuantity(product.id.toString(), count);
+    } else {
+      const cartItem = {
+        id: product.id.toString(),
+        name: product.name,
+        img: product.image.desktop,
+        price: product.price,
+        quantity: count,
+      };
+      addToCart(cartItem);
     }
   };
 
