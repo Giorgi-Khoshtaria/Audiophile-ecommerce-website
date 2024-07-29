@@ -22,10 +22,7 @@ interface SummaryProps {
   isFormValid: () => boolean;
 }
 
-const Summary: React.FC<SummaryProps> = ({
-  formValues,
-  isFormValid,
-}: SummaryProps) => {
+const Summary: React.FC<SummaryProps> = ({ isFormValid }: SummaryProps) => {
   const { cartItems } = useCart();
   const [showModal, setShowModal] = useState(false);
 

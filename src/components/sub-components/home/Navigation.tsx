@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 import headphones from "/assets/shared/desktop/image-category-thumbnail-headphones.png";
 import earphones from "/assets/shared/desktop/image-category-thumbnail-earphones.png";
 import speakers from "/assets/shared/desktop/image-category-thumbnail-speakers.png";
-
+import { useEffect } from "react";
 function Navigation() {
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   return (
     <Container>
       <Wrapper>

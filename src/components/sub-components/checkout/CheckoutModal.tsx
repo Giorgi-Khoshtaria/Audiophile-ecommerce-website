@@ -48,7 +48,7 @@ function CheckoutModal({ grandtotal, onClose }: CheckoutModalProps) {
           <Text>You will receive an email confirmation shortly.</Text>
           <ItemsDiv>
             <Itemwrapper>
-              <div>
+              <Items>
                 {showAllItems
                   ? cartItems.map((item) => (
                       <ItemsForModal
@@ -70,7 +70,7 @@ function CheckoutModal({ grandtotal, onClose }: CheckoutModalProps) {
                           quantity={item.quantity}
                         />
                       ))}
-              </div>
+              </Items>
 
               {cartItems.length > 1 && (
                 <More onClick={handleToggleItems}>
@@ -154,8 +154,14 @@ const Itemwrapper = styled.div`
   align-items: center;
   flex-direction: column;
   background: ${defaultTheme.colors.flashwite};
+  min-height: 100%;
 `;
-
+const Items = styled.div`
+  min-height: 133px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 const Grandtotal = styled.div`
   height: 100%;
   padding: 41px 68px 41px 33px;
@@ -198,6 +204,7 @@ const Finish = styled.button`
   text-transform: uppercase;
   text-decoration: none;
   border: 0;
+  cursor: pointer;
 `;
 
 const More = styled.p`
