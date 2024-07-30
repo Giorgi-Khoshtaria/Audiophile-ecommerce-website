@@ -22,12 +22,13 @@ function ProductSection({
   category,
 }: ProductSectionProps) {
   // Determine if index is odd or even
-  const isOdd = index % 2 !== 0;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const isodd = index % 2 !== 0;
   const { phathName } = useParams();
   console.log(phathName);
 
   return (
-    <InformationContainer isOdd={isOdd}>
+    <InformationContainer isodd={`${isodd}`}>
       <MainImage>
         <img src={img} alt="" />
       </MainImage>
@@ -45,7 +46,7 @@ function ProductSection({
 
 export default ProductSection;
 
-const InformationContainer = styled.div<{ isOdd: boolean }>`
+const InformationContainer = styled.div<{ isodd: string }>`
   width: 1440px;
   display: flex;
   align-items: center;
@@ -53,7 +54,8 @@ const InformationContainer = styled.div<{ isOdd: boolean }>`
   margin-top: 56px;
   margin-bottom: 160px;
   padding: 0 20px;
-  flex-direction: ${(props) => (props.isOdd ? "row-reverse" : "row")};
+  flex-direction: ${(props) =>
+    props.isodd === "true" ? "row-reverse" : "row"};
 `;
 
 const MainImage = styled.div`

@@ -18,11 +18,14 @@ function CheckoutModal({ grandtotal, onClose }: CheckoutModalProps) {
   const handleToggleItems = () => {
     setShowAllItems(!showAllItems);
   };
+
   const handleFinish = () => {
     clearCart();
+    localStorage.removeItem("formValues");
     onClose();
     navigate("/home");
   };
+
   return (
     <Overlay onClick={onClose}>
       <Container onClick={(e) => e.stopPropagation()}>
@@ -142,9 +145,10 @@ const Text = styled.p`
 `;
 
 const ItemsDiv = styled.div`
+  height: 100%;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   margin-bottom: 46px;
 `;
@@ -154,16 +158,19 @@ const Itemwrapper = styled.div`
   align-items: center;
   flex-direction: column;
   background: ${defaultTheme.colors.flashwite};
-  min-height: 100%;
+  height: 100%;
 `;
 const Items = styled.div`
   min-height: 133px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: auto;
 `;
 const Grandtotal = styled.div`
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   padding: 41px 68px 41px 33px;
   background-color: ${defaultTheme.colors.black};
   background-size: 100%;

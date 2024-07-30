@@ -28,7 +28,7 @@ function Navigation() {
               <path
                 d="M1.3219 1L6.3219 6L1.3219 11"
                 stroke="#D87D4A"
-                stroke-width="2"
+                strokeWidth="2"
               />
             </svg>
           </Link>
@@ -50,7 +50,7 @@ function Navigation() {
               <path
                 d="M1.3219 1L6.3219 6L1.3219 11"
                 stroke="#D87D4A"
-                stroke-width="2"
+                strokeWidth="2"
               />
             </svg>
           </Link>
@@ -72,7 +72,7 @@ function Navigation() {
               <path
                 d="M1.3219 1L6.3219 6L1.3219 11"
                 stroke="#D87D4A"
-                stroke-width="2"
+                strokeWidth="2"
               />
             </svg>
           </Link>

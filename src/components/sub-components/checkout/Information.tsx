@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
 import Summary from "./Summary";
@@ -17,13 +17,22 @@ function Information() {
     eMoneyPIN: "",
   });
 
+  useEffect(() => {
+    const savedFormValues = localStorage.getItem("formValues");
+    if (savedFormValues) {
+      setFormValues(JSON.parse(savedFormValues));
+    }
+  }, []);
+
   const handleShowcheck = (method: React.SetStateAction<string>) => {
     setShowCheck(method);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+    const updatedFormValues = { ...formValues, [name]: value };
+    setFormValues(updatedFormValues);
+    localStorage.setItem("formValues", JSON.stringify(updatedFormValues));
   };
 
   const isFormValid = () => {
@@ -155,7 +164,7 @@ function Information() {
             <Label htmlFor="">Payment Method</Label>
             <PaymentDiv>
               <PaymentMethod
-                isSelected={showCheck === "Emoney"}
+                isselected={`${showCheck} === "Emoney"`}
                 onClick={() => handleShowcheck("Emoney")}
               >
                 <CheckDiv>
@@ -164,7 +173,7 @@ function Information() {
                 <PaymentLabel htmlFor="">e-Money</PaymentLabel>
               </PaymentMethod>
               <PaymentMethod
-                isSelected={showCheck === "Cash"}
+                isselected={`${showCheck} === "Cash"`}
                 onClick={() => handleShowcheck("Cash")}
               >
                 <CheckDiv>
@@ -377,7 +386,7 @@ const PaymentDiv = styled.div`
   flex-direction: column;
   gap: 16px;
 `;
-const PaymentMethod = styled.div<{ isSelected: boolean }>`
+const PaymentMethod = styled.div<{ isselected: string }>`
   width: 309px;
   height: 56px;
   flex-shrink: 0;
@@ -385,7 +394,8 @@ const PaymentMethod = styled.div<{ isSelected: boolean }>`
   align-items: center;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid ${({ isSelected }) => (isSelected ? "#D87D4A" : "#ccc")};
+  border: 1px solid
+    ${({ isselected }) => (isselected === "true" ? "#D87D4A" : "#ccc")};
   cursor: pointer;
   &:hover {
     border-color: #d87d4a;

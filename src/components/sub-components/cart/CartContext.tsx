@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 
 interface CartItem {
   quantity: number;
@@ -32,29 +38,43 @@ interface CartProviderProps {
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  console.log(cartItems, "cartitem");
+
+  useEffect(() => {
+    const storedItems = localStorage.getItem("cartItems");
+    if (storedItems) {
+      setCartItems(JSON.parse(storedItems));
+    }
+  }, []);
+
+  const updateLocalStorage = (items: CartItem[]) => {
+    localStorage.setItem("cartItems", JSON.stringify(items));
+  };
 
   const addToCart = (item: CartItem) => {
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
-    console.log(existingItem, "existingitem");
+    let updatedItems;
     if (existingItem) {
-      const updatedItems = cartItems.map((cartItem) =>
+      updatedItems = cartItems.map((cartItem) =>
         cartItem.id === item.id
           ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
           : cartItem
       );
-      setCartItems(updatedItems);
     } else {
-      setCartItems([...cartItems, { ...item, quantity: item.quantity }]);
+      updatedItems = [...cartItems, { ...item, quantity: item.quantity }];
     }
+    setCartItems(updatedItems);
+    updateLocalStorage(updatedItems);
   };
 
   const clearCart = () => {
     setCartItems([]);
+    localStorage.removeItem("cartItems");
   };
 
   const removeFromCart = (itemId: string) => {
-    setCartItems(cartItems.filter((item) => item.id !== itemId));
+    const updatedItems = cartItems.filter((item) => item.id !== itemId);
+    setCartItems(updatedItems);
+    updateLocalStorage(updatedItems);
   };
 
   const updateQuantity = (itemId: string, quantity: number) => {
@@ -62,7 +82,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       item.id === itemId ? { ...item, quantity } : item
     );
     setCartItems(updatedItems);
-    console.log(updatedItems, "updateItem updateQuantity");
+    updateLocalStorage(updatedItems);
   };
 
   return (
