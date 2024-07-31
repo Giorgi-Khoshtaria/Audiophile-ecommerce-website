@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { defaultTheme } from "../../utils/defaultTheme";
 import hero from "/assets/home/desktop/hero.png";
+import herotablet from "/assets/home/tablet/image-header.jpg"; // Updated path
 import data from "../../../data.json";
 
 function HomeHero() {
@@ -17,10 +18,13 @@ function HomeHero() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Link to={`/${product.category}/${product.id}`}>See Product</Link>
+          <StyledLink to={`/${product.category}/${product.id}`}>
+            See Product
+          </StyledLink>
         </Information>
-        {/* <HeroImg></HeroImg> */}
-        <Img src={hero} alt="" />
+
+        <Img src={hero} alt="homepagehero" />
+        <Imagetablet src={herotablet} />
       </Wrapper>
     </Container>
   );
@@ -44,17 +48,22 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  /* position: relative; */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    position: relative;
+  }
 `;
 
 const Information = styled.div`
-  /* position: absolute; */
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 126px;
+    text-align: center;
+  }
   h2 {
     color: ${defaultTheme.colors.white};
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
     letter-spacing: 10px;
     text-transform: uppercase;
     opacity: 0.4964;
@@ -63,9 +72,8 @@ const Information = styled.div`
     width: 396px;
     color: ${defaultTheme.colors.white};
     font-size: 56px;
-    font-style: normal;
     font-weight: 700;
-    line-height: 58px; /* 103.571% */
+    line-height: 58px;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin: 24px 0;
@@ -74,33 +82,37 @@ const Information = styled.div`
     width: 349px;
     color: ${defaultTheme.colors.white};
     font-size: 15px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 25px; /* 166.667% */
+    line-height: 25px;
     opacity: 0.75;
     margin-bottom: 40px;
   }
-  a {
-    padding: 15px 29.5px 15px 31.5px;
-    background-color: ${defaultTheme.colors.peru};
-    color: ${defaultTheme.colors.white};
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
-    &:hover {
-      background-color: ${defaultTheme.colors.tangelo};
-    }
+`;
+
+const StyledLink = styled(Link)`
+  padding: 15px 30px;
+  background-color: ${defaultTheme.colors.peru};
+  color: ${defaultTheme.colors.white};
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: ${defaultTheme.colors.tangelo};
   }
 `;
 
-const Img = styled.img``;
-// const HeroImg = styled.div`
-//   background: url(${hero}) lightgray 0px 0px / 100% 100% no-repeat;
-//   width: 540px; /* Adjust the width and height as needed */
-//   height: 560px;
-// `;
+const Img = styled.img`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const Imagetablet = styled.img`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    width: 100%;
+  }
+`;

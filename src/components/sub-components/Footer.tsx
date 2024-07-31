@@ -108,14 +108,22 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 0 20px;
   background-color: ${defaultTheme.colors.chineseblack};
   padding: 75px 20px 48px 20px;
+  position: relative;
 `;
 const Content = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
 `;
 const Logo = styled.div`
   width: 143px;
@@ -154,9 +162,14 @@ const Information = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: flex-end;
+  }
 `;
 const MainInfo = styled.p`
   width: 540px;
+
   color: ${defaultTheme.colors.white};
   font-size: 15px;
   font-style: normal;
@@ -165,6 +178,9 @@ const MainInfo = styled.p`
   opacity: 0.5;
   margin-bottom: 56px;
   margin-top: 36px;
+  @media (max-width: 768px) {
+    width: 689px;
+  }
 `;
 const CopyRight = styled.p`
   width: 540px;
@@ -180,6 +196,10 @@ const Links = styled.div`
   align-items: center;
   justify-content: center;
   gap: 16px;
+  @media (max-width: 768px) {
+    position: absolute;
+    right: 20px;
+  }
 
   svg {
     cursor: pointer;

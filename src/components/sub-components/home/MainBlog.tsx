@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
 import mainblog from "/assets/shared/desktop/image-best-gear.jpg";
+import mainblogtablet from "/assets/shared/tablet/image-best-gear.jpg";
 
 function MainBlog() {
   return (
@@ -20,6 +21,7 @@ function MainBlog() {
         </p>
       </Information>
       <Image src={mainblog} alt="mainblog" />
+      <Imagetablet src={mainblogtablet} alt="mainblog" />
     </Container>
   );
 }
@@ -32,11 +34,22 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 200px;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-bottom: 96px;
+  }
   /* padding: 0 20px; */
 `;
 
 const Information = styled.div`
   width: 445px;
+
+  @media (max-width: 768px) {
+    width: 573px;
+    text-align: center;
+  }
   h1 {
     color: ${defaultTheme.colors.black};
     font-size: 40px;
@@ -66,4 +79,18 @@ const Image = styled.img`
   flex-shrink: 0;
   border-radius: 8px;
   background: #f1f1f1;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const Imagetablet = styled.img`
+  display: none;
+  @media (max-width: 768px) {
+    border-radius: 8px;
+    display: flex;
+    width: 689px;
+    height: 300px;
+    flex-shrink: 0;
+    margin-bottom: 63px;
+  }
 `;
