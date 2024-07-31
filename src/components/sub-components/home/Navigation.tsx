@@ -13,7 +13,7 @@ function Navigation() {
   return (
     <Container>
       <Wrapper>
-        <img src={headphones} alt="" />
+        <Image src={headphones} alt="" />
         <Info>
           <h2>HEADPHONES</h2>
           <Link to="/headphones">
@@ -35,7 +35,7 @@ function Navigation() {
         </Info>
       </Wrapper>
       <Wrapper>
-        <img src={speakers} alt="" />
+        <Image src={speakers} alt="" />
         <Info>
           <h2>SPEAKERS</h2>
           <Link to="/speakers">
@@ -57,7 +57,7 @@ function Navigation() {
         </Info>
       </Wrapper>
       <Wrapper>
-        <img src={earphones} alt="" />
+        <Image src={earphones} alt="" />
         <Info>
           <h2>EARPHONES</h2>
           <Link to="/earphones">
@@ -90,6 +90,11 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 168px;
+  gap: 10px;
+  @media (max-width: 768px) {
+    width: auto;
+  }
+
   /* padding: 0 20px; */
 `;
 const Wrapper = styled.div`
@@ -100,15 +105,25 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: baseline;
   flex-direction: column;
-  img {
-    transform: translateY(-70px);
-    width: 122.947px;
-    height: 160px;
+  @media (max-width: 768px) {
+    width: 223px;
+    height: 165px;
     flex-shrink: 0;
-    object-fit: cover;
   }
 `;
-
+const Image = styled.img`
+  transform: translateY(-70px);
+  width: 122.947px;
+  height: 160px;
+  flex-shrink: 0;
+  object-fit: cover;
+  @media (max-width: 768px) {
+    width: 79.916px;
+    height: 104px;
+    flex-shrink: 0;
+    transform: translateY(-50px);
+  }
+`;
 const Info = styled.div`
   text-align: center;
   transform: translateY(-50px);
@@ -122,6 +137,9 @@ const Info = styled.div`
     letter-spacing: 1.286px;
     text-transform: uppercase;
     margin-bottom: 15px;
+    @media (max-width: 768px) {
+      font-size: 15px;
+    }
   }
   a {
     color: ${defaultTheme.colors.black};

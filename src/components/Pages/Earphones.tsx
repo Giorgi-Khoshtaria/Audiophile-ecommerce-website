@@ -48,10 +48,12 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
   // Add your desired styles here
 `;
 const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;

@@ -114,6 +114,9 @@ const Container = styled.div`
   background-color: ${defaultTheme.colors.white};
   border-radius: 8px;
   padding: 48px;
+  @media (max-width: 768px) {
+    left: 15%;
+  }
 `;
 
 const Logo = styled.svg`

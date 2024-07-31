@@ -163,8 +163,15 @@ const Container = styled.div`
   background-color: ${defaultTheme.colors.chineseblack};
   border-bottom: 1px solid ${defaultTheme.colors.gray};
   z-index: 10;
+  position: relative;
 `;
 const ModalIconDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+`;
+const ModalIcon = styled.div`
   display: none;
 
   @media (max-width: 768px) {
@@ -174,19 +181,19 @@ const ModalIconDiv = styled.div`
     gap: 42px;
   }
 `;
-const ModalIcon = styled.div``;
 const Shownavigation = styled.div`
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
   /* padding: 0 20px; */
   background-color: ${defaultTheme.colors.white};
-  padding: 108px 0 67px 0;
+  padding: 108px 20px 67px 20px;
   position: absolute;
   top: 100px;
   left: 0;
 `;
+
 const NavigaionsOverllay = styled.div`
   position: fixed;
   left: 0;
@@ -241,6 +248,7 @@ const Li = styled.li`
 const Cart = styled.div`
   cursor: pointer;
   position: relative;
+  padding-right: 20px;
 `;
 const CartImage = styled.img`
   width: 24px;

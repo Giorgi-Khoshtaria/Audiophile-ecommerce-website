@@ -244,6 +244,11 @@ const CheckoutContent = styled.div`
   align-items: top;
   justify-content: space-between;
   gap: 30px;
+  padding: 0 20px;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 const Informations = styled.div`
   width: 100%;

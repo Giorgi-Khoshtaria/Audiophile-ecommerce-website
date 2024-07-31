@@ -81,7 +81,8 @@ function ProductDetails() {
         <Goback to="/home"> Go Back</Goback>
         <Information>
           <MainImage>
-            <img src={product.image.desktop} alt="" />
+            <MainImageDesktop src={product.image.desktop} alt="product" />
+            <MainImageTablet src={product.image.tablet} alt="product" />
           </MainImage>
           <div>
             <Title>NEW PRODUCT</Title>
@@ -120,14 +121,23 @@ function ProductDetails() {
             <img src={product.gallery.first.desktop} alt="" />
             <img src={product.gallery.second.desktop} alt="" />
           </FirsSecond>
+          <FirstSecondTablet>
+            <img src={product.gallery.first.tablet} alt="" />
+            <img src={product.gallery.second.tablet} alt="" />
+          </FirstSecondTablet>
           <ThirdImage src={product.gallery.third.desktop} alt="" />
+          <ThirdImageTablet src={product.gallery.third.tablet} alt="" />
         </Gallery>
         <Others>
           <h1>You may also like</h1>
           <OthersUl>
             {others.map((other, index) => (
               <OthersLi key={index}>
-                <img src={other.image.desktop} alt={other.name} />
+                <LiImageDesktop src={other.image.desktop} alt={other.name} />
+                <TabletImgDiv>
+                  <LIImageTablet src={other.image.tablet} alt={other.name} />
+                </TabletImgDiv>
+
                 <p>{other.name}</p>
                 <OthersLink
                   to="#"
@@ -139,7 +149,10 @@ function ProductDetails() {
             ))}
           </OthersUl>
         </Others>
-        <Navigation />
+        <NavigationDiv>
+          <Navigation />
+        </NavigationDiv>
+
         <MainBlog />
       </div>
     </Container>
@@ -154,6 +167,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 79px;
+  /* padding: 0 20px; */
 `;
 
 const Information = styled.div`
@@ -164,6 +178,13 @@ const Information = styled.div`
   margin-top: 56px;
   margin-bottom: 160px;
   padding: 0 20px;
+  @media (max-width: 768px) {
+    width: 768px;
+    display: flex;
+    justify-content: center;
+    /* padding: 0 20px; */
+    gap: 70px;
+  }
 `;
 
 const Goback = styled(Link)`
@@ -180,13 +201,27 @@ const Goback = styled(Link)`
 const MainImage = styled.div`
   padding: 65px 95px 108px 95px;
   background-color: ${defaultTheme.colors.flashwite};
-  img {
-    width: 349.238px;
-    height: 386px;
+  @media (max-width: 768px) {
+    padding: 133px 50px 146px 50px;
+  }
+`;
+const MainImageDesktop = styled.img`
+  width: 349.238px;
+  height: 386px;
+  flex-shrink: 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const MainImageTablet = styled.img`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    width: 181px;
+    height: 201px;
     flex-shrink: 0;
   }
 `;
-
 const Title = styled.h2`
   color: ${defaultTheme.colors.peru};
   font-size: 14px;
@@ -196,6 +231,9 @@ const Title = styled.h2`
   letter-spacing: 10px;
   text-transform: uppercase;
   margin-bottom: 16px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const ProductName = styled.h1`
@@ -207,6 +245,9 @@ const ProductName = styled.h1`
   letter-spacing: 1.429px;
   text-transform: uppercase;
   margin-bottom: 32px;
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const Description = styled.p`
@@ -218,6 +259,9 @@ const Description = styled.p`
   line-height: 25px; /* 166.667% */
   opacity: 0.5;
   margin-bottom: 32px;
+  @media (max-width: 768px) {
+    width: 300px;
+  }
 `;
 
 const Price = styled.p`
@@ -300,6 +344,13 @@ const Fearures = styled.div`
   justify-content: space-between;
   padding: 0 20px;
   margin-bottom: 160px;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 120px;
+    /* padding: 0 20px; */
+  }
   h1 {
     color: ${defaultTheme.colors.black};
     font-size: 32px;
@@ -355,20 +406,59 @@ const Gallery = styled.div`
   gap: 30px;
   padding: 0 20px;
   margin-bottom: 160px;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+  }
 `;
 const FirsSecond = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+
   img {
     width: 445px;
     height: 280px;
+    border-radius: 8px;
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
-
+const FirstSecondTablet = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    img {
+      width: 277px;
+      height: 174px;
+      flex-shrink: 0;
+      border-radius: 8px;
+    }
+  }
+`;
 const ThirdImage = styled.img`
   width: 635px;
   height: 592px;
+  border-radius: 8px;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const ThirdImageTablet = styled.img`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    width: 395px;
+    height: 368px;
+    flex-shrink: 0;
+    border-radius: 8px;
+  }
 `;
 const Others = styled.div`
   width: 100%;
@@ -376,6 +466,7 @@ const Others = styled.div`
   align-items: center;
   flex-direction: column;
   margin-bottom: 160px;
+  padding: 0 20px;
   h1 {
     color: ${defaultTheme.colors.black};
     font-size: 32px;
@@ -394,16 +485,16 @@ const OthersUl = styled.ul`
   align-items: center;
   justify-content: space-between;
   gap: 30px;
+  @media (max-width: 768px) {
+    width: auto;
+    gap: 15px;
+  }
 `;
 const OthersLi = styled.li`
   display: flex;
   align-items: center;
   flex-direction: column;
-  img {
-    width: 350px;
-    height: 318px;
-    flex-shrink: 0;
-  }
+
   p {
     color: ${defaultTheme.colors.black};
     text-align: center;
@@ -416,6 +507,27 @@ const OthersLi = styled.li`
     margin-top: 40px;
     margin-bottom: 32px;
   }
+`;
+const LiImageDesktop = styled.img`
+  width: 350px;
+  height: 318px;
+  flex-shrink: 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const TabletImgDiv = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    background-color: ${defaultTheme.colors.flashwite};
+    padding: 62px 36px;
+  }
+`;
+const LIImageTablet = styled.img`
+  width: 148.305px;
+  height: 193px;
+  flex-shrink: 0;
 `;
 const OthersLink = styled(Link)`
   display: flex;
@@ -434,4 +546,15 @@ const OthersLink = styled(Link)`
   /* padding: 15px 29.5px 15px 31%.5px; */
   background-color: ${defaultTheme.colors.peru};
   text-decoration: none;
+`;
+
+const NavigationDiv = styled.div`
+  padding: 0 20px;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+  }
 `;

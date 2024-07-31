@@ -38,7 +38,6 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: ${defaultTheme.colors.chineseblack};
-  padding: 0 20px;
   margin-bottom: 120px;
 `;
 
@@ -47,7 +46,6 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
   @media (max-width: 768px) {
     flex-direction: column;
     position: relative;
