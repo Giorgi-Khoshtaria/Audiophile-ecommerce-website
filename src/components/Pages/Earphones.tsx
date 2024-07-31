@@ -23,7 +23,8 @@ function Earphones() {
             headphoneProducts.map((item, index) => (
               <ProductSection
                 key={item.id}
-                img={item.image.desktop} // Assuming you want to use the desktop image
+                img={item.image.desktop}
+                imgtablet={item.image.tablet} // Assuming you want to use the desktop image
                 name={item.name}
                 description={item.description}
                 index={index}

@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 
 interface ProductSectionProps {
   img: string;
+  imgtablet: string;
   name: string;
   description: string;
   index: number;
@@ -15,6 +16,7 @@ interface ProductSectionProps {
 
 function ProductSection({
   img,
+  imgtablet,
   name,
   description,
   index,
@@ -30,7 +32,8 @@ function ProductSection({
   return (
     <InformationContainer isodd={`${isodd}`}>
       <MainImage>
-        <img src={img} alt="" />
+        <MainImageDesktop src={img} alt="main-image" />
+        <MainImagetablet src={imgtablet} alt="main-image" />
       </MainImage>
       <Info>
         {index === 0 && <Title>NEW PRODUCT</Title>}
@@ -56,22 +59,55 @@ const InformationContainer = styled.div<{ isodd: string }>`
   padding: 0 20px;
   flex-direction: ${(props) =>
     props.isodd === "true" ? "row-reverse" : "row"};
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const MainImage = styled.div`
   padding: 65px 95px 108px 95px;
   background-color: ${defaultTheme.colors.flashwite};
-  img {
-    width: 349.238px;
-    height: 386px;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 689px;
+    height: 352px;
+    flex-shrink: 0;
+    padding: 0;
+    border-radius: 8px;
+  }
+`;
+const MainImageDesktop = styled.img`
+  width: 349.238px;
+  height: 386px;
+  flex-shrink: 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const MainImagetablet = styled.img`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    width: 220px;
+    height: 243px;
     flex-shrink: 0;
   }
 `;
-
 const Info = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 52px;
+  }
 `;
 
 const Title = styled.h2`
