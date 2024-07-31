@@ -248,7 +248,7 @@ const Li = styled.li`
 const Cart = styled.div`
   cursor: pointer;
   position: relative;
-  padding-right: 20px;
+  /* padding-right: 20px; */
 `;
 const CartImage = styled.img`
   width: 24px;

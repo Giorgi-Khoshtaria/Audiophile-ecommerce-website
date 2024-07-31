@@ -108,7 +108,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   background-color: ${defaultTheme.colors.chineseblack};
   padding: 75px 20px 48px 20px;
   position: relative;
