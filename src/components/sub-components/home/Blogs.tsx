@@ -63,7 +63,7 @@ const BlogOne = styled.div`
   padding: 95px 95px 0 114px;
   margin-bottom: 48px;
   overflow: hidden;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     flex-direction: column;
     padding: 52px 0 64px 0;
@@ -88,7 +88,7 @@ const BlogOne = styled.div`
   }
 `;
 const BlogOneInfos = styled.div`
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -121,7 +121,7 @@ const BlogoneImg = styled.img`
   height: 493px;
   flex-shrink: 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     width: 197.212px;
     height: 237px;
     flex-shrink: 0;
@@ -140,7 +140,7 @@ const BlogTwo = styled.div`
   background-image: url(${blog2img});
   padding: 101px 0 153px 96.5px;
   margin-bottom: 50px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     background-image: url(${blog2imgtablet});
   }
   h1 {
@@ -183,20 +183,20 @@ const BlogThree = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     gap: 11px;
   }
 `;
 
 const BlogThreeImg = styled.img`
   border-radius: 8px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: none;
   }
 `;
 const BlogThreeImgtablet = styled.img`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     width: 339px;
     height: 320px;
     flex-shrink: 0;
@@ -209,7 +209,7 @@ const BlogThreeInfo = styled.div`
   padding: 101px 200px 101px 96.5px;
   background-color: ${defaultTheme.colors.flashwite};
   border-radius: 8px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     padding: 101px 53px 101px 41px;
   }
   h1 {
@@ -220,7 +220,7 @@ const BlogThreeInfo = styled.div`
     line-height: normal;
     letter-spacing: 2px;
     text-transform: uppercase;
-    @media (max-width: 768px) {
+    @media (max-width: 1440px) {
       font-size: 26px;
     }
   }

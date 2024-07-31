@@ -91,7 +91,7 @@ const Container = styled.div`
   justify-content: space-between;
   margin-bottom: 168px;
   gap: 10px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     width: auto;
   }
 
@@ -105,7 +105,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: baseline;
   flex-direction: column;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     width: 223px;
     height: 165px;
     flex-shrink: 0;
@@ -117,7 +117,7 @@ const Image = styled.img`
   height: 160px;
   flex-shrink: 0;
   object-fit: cover;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     width: 79.916px;
     height: 104px;
     flex-shrink: 0;
@@ -137,7 +137,7 @@ const Info = styled.div`
     letter-spacing: 1.286px;
     text-transform: uppercase;
     margin-bottom: 15px;
-    @media (max-width: 768px) {
+    @media (max-width: 1440px) {
       font-size: 15px;
     }
   }

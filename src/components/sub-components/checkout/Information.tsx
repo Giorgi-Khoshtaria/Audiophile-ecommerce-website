@@ -245,7 +245,7 @@ const CheckoutContent = styled.div`
   justify-content: space-between;
   gap: 30px;
   padding: 0 20px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     flex-direction: column;
   }

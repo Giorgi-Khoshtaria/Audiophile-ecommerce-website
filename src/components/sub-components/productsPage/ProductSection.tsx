@@ -59,7 +59,7 @@ const InformationContainer = styled.div<{ isodd: string }>`
   padding: 0 20px;
   flex-direction: ${(props) =>
     props.isodd === "true" ? "row-reverse" : "row"};
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,7 +69,7 @@ const InformationContainer = styled.div<{ isodd: string }>`
 const MainImage = styled.div`
   padding: 65px 95px 108px 95px;
   background-color: ${defaultTheme.colors.flashwite};
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,13 +84,13 @@ const MainImageDesktop = styled.img`
   width: 349.238px;
   height: 386px;
   flex-shrink: 0;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: none;
   }
 `;
 const MainImagetablet = styled.img`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     width: 220px;
     height: 243px;
@@ -101,7 +101,7 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     align-items: center;
     justify-content: center;

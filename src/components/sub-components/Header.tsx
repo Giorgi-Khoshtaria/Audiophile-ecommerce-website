@@ -64,9 +64,9 @@ function Header() {
             {shownavigation ? (
               <NavigaionsOverllay onClick={handleShownavigation}>
                 <Shownavigation>
-                  <div>
+                  <ModalNavigationDiv>
                     <ModalNavigations />
-                  </div>
+                  </ModalNavigationDiv>
                 </Shownavigation>
               </NavigaionsOverllay>
             ) : (
@@ -174,15 +174,18 @@ const ModalIconDiv = styled.div`
 const ModalIcon = styled.div`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 42px;
   }
 `;
+const ModalNavigationDiv = styled.div`
+  width: 100%;
+`;
 const Shownavigation = styled.div`
-  /* width: 100%; */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -220,7 +223,7 @@ const Ul = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 35px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: none;
   }
 `;

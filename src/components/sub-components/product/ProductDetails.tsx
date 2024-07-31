@@ -178,7 +178,7 @@ const Information = styled.div`
   margin-top: 56px;
   margin-bottom: 160px;
   padding: 0 20px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     width: 768px;
     display: flex;
     justify-content: center;
@@ -201,7 +201,7 @@ const Goback = styled(Link)`
 const MainImage = styled.div`
   padding: 65px 95px 108px 95px;
   background-color: ${defaultTheme.colors.flashwite};
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     padding: 133px 50px 146px 50px;
   }
 `;
@@ -209,13 +209,13 @@ const MainImageDesktop = styled.img`
   width: 349.238px;
   height: 386px;
   flex-shrink: 0;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: none;
   }
 `;
 const MainImageTablet = styled.img`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     width: 181px;
     height: 201px;
@@ -231,7 +231,7 @@ const Title = styled.h2`
   letter-spacing: 10px;
   text-transform: uppercase;
   margin-bottom: 16px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     font-size: 12px;
   }
 `;
@@ -245,7 +245,7 @@ const ProductName = styled.h1`
   letter-spacing: 1.429px;
   text-transform: uppercase;
   margin-bottom: 32px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     font-size: 28px;
   }
 `;
@@ -259,7 +259,7 @@ const Description = styled.p`
   line-height: 25px; /* 166.667% */
   opacity: 0.5;
   margin-bottom: 32px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     width: 300px;
   }
 `;
@@ -344,7 +344,7 @@ const Fearures = styled.div`
   justify-content: space-between;
   padding: 0 20px;
   margin-bottom: 160px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -406,7 +406,7 @@ const Gallery = styled.div`
   gap: 30px;
   padding: 0 20px;
   margin-bottom: 160px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -424,13 +424,13 @@ const FirsSecond = styled.div`
     height: 280px;
     border-radius: 8px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: none;
   }
 `;
 const FirstSecondTablet = styled.div`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -446,13 +446,13 @@ const ThirdImage = styled.img`
   width: 635px;
   height: 592px;
   border-radius: 8px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: none;
   }
 `;
 const ThirdImageTablet = styled.img`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     width: 395px;
     height: 368px;
@@ -485,7 +485,7 @@ const OthersUl = styled.ul`
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     width: auto;
     gap: 15px;
   }
@@ -512,13 +512,13 @@ const LiImageDesktop = styled.img`
   width: 350px;
   height: 318px;
   flex-shrink: 0;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: none;
   }
 `;
 const TabletImgDiv = styled.div`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     background-color: ${defaultTheme.colors.flashwite};
     padding: 62px 36px;
@@ -550,7 +550,7 @@ const OthersLink = styled(Link)`
 
 const NavigationDiv = styled.div`
   padding: 0 20px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     align-items: center;
     justify-content: center;

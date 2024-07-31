@@ -34,7 +34,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 200px;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
@@ -46,7 +46,7 @@ const Container = styled.div`
 const Information = styled.div`
   width: 445px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     width: 573px;
     text-align: center;
   }
@@ -79,13 +79,13 @@ const Image = styled.img`
   flex-shrink: 0;
   border-radius: 8px;
   background: #f1f1f1;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: none;
   }
 `;
 const Imagetablet = styled.img`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     border-radius: 8px;
     display: flex;
     width: 689px;

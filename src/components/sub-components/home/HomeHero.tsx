@@ -33,7 +33,7 @@ function HomeHero() {
 export default HomeHero;
 
 const Container = styled.div`
-  width: 100vw;
+  width: calc(100% + 40px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +46,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     width: 100%;
     flex-direction: column;
     position: relative;
@@ -54,7 +54,7 @@ const Wrapper = styled.div`
 `;
 
 const Information = styled.div`
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     position: absolute;
     top: 126px;
     text-align: center;
@@ -104,14 +104,15 @@ const StyledLink = styled(Link)`
 `;
 
 const Img = styled.img`
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: none;
   }
 `;
 const Imagetablet = styled.img`
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 1440px) {
     display: flex;
-    width: 100%;
+    height: 729px;
+    /* width: 100%; */
   }
 `;
