@@ -6,6 +6,7 @@ import CartItem from "./cart/CartItem";
 import { useCart } from "./cart/CartContext";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ModalNavigations from "./home/ModalNavigations";
 
 const navigation: string[] = ["home", "headphones", "speakers", "earphones"];
 
@@ -14,12 +15,15 @@ function Header() {
   const itemNumber = cartItems.length;
   const [total, setTotal] = useState(0);
   const [show, setShow] = useState(false);
+  const [shownavigation, setShownavigation] = useState(false);
   const navigate = useNavigate();
 
   const handleShowModal = () => {
     setShow(!show);
   };
-
+  const handleShownavigation = () => {
+    setShownavigation(!shownavigation);
+  };
   const handleCheckout = () => {
     if (itemNumber === 0) {
       alert(
@@ -44,7 +48,7 @@ function Header() {
       <Container>
         <Content>
           <ModalIconDiv>
-            <ModalIcon>
+            <ModalIcon onClick={handleShownavigation}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -57,6 +61,18 @@ function Header() {
                 <rect y="12" width="16" height="3" fill="white" />
               </svg>
             </ModalIcon>
+            {shownavigation ? (
+              <NavigaionsOverllay onClick={handleShownavigation}>
+                <Shownavigation>
+                  <div>
+                    <ModalNavigations />
+                  </div>
+                </Shownavigation>
+              </NavigaionsOverllay>
+            ) : (
+              ""
+            )}
+
             <Logo>
               <Link to="/home">
                 <svg
@@ -159,6 +175,27 @@ const ModalIconDiv = styled.div`
   }
 `;
 const ModalIcon = styled.div``;
+const Shownavigation = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 0 20px; */
+  background-color: ${defaultTheme.colors.white};
+  padding: 108px 0 67px 0;
+  position: absolute;
+  top: 100px;
+  left: 0;
+`;
+const NavigaionsOverllay = styled.div`
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+`;
 const Content = styled.div`
   width: 100%;
   display: flex;
