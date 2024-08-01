@@ -1,4 +1,3 @@
-import React from "react";
 import Navigation from "./Navigation";
 import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";

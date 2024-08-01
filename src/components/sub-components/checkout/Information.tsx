@@ -249,6 +249,9 @@ const CheckoutContent = styled.div`
     display: flex;
     flex-direction: column;
   }
+  @media (max-width: 768px) {
+    margin-bottom: 97px;
+  }
 `;
 const Informations = styled.div`
   width: 100%;

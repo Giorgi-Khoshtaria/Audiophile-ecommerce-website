@@ -267,6 +267,10 @@ const CartModal = styled.div`
   border-radius: 8px;
   padding: 32px;
   width: 377px;
+  @media (max-width: 768px) {
+    right: 0;
+    width: 327px;
+  }
 `;
 const ModalHeader = styled.div`
   display: flex;

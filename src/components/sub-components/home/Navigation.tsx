@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
 import { Link } from "react-router-dom";

@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { defaultTheme } from "../utils/defaultTheme";
@@ -214,7 +213,6 @@ const Infos = styled.div`
   }
 `;
 const CopyRight = styled.p`
-  width: 540px;
   color: ${defaultTheme.colors.white};
   font-size: 15px;
   font-style: normal;

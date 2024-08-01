@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
 import { useCart } from "../cart/CartContext";
@@ -117,6 +117,11 @@ const Container = styled.div`
   @media (max-width: 1440px) {
     left: 15%;
   }
+  @media (max-width: 768px) {
+    top: 12%;
+    left: 15px;
+    padding: 24px;
+  }
 `;
 
 const Logo = styled.svg`
@@ -124,6 +129,9 @@ const Logo = styled.svg`
   height: 64px;
   flex-shrink: 0;
   margin-bottom: 33px;
+  @media (max-width: 768px) {
+    margin-bottom: 23px;
+  }
 `;
 
 const Title = styled.h1`
@@ -150,6 +158,8 @@ const Text = styled.p`
   margin-bottom: 33px;
   @media (max-width: 768px) {
     width: 263px;
+    margin-top: 16px;
+    margin-bottom: 24px;
   }
 `;
 
@@ -165,6 +175,7 @@ const ItemsDiv = styled.div`
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    margin-bottom: 24px;
   }
 `;
 
@@ -180,6 +191,7 @@ const Itemwrapper = styled.div`
 `;
 const Items = styled.div`
   min-height: 133px;
+  max-height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;

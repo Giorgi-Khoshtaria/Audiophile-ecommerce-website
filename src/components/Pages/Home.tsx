@@ -1,4 +1,3 @@
-import React from "react";
 import HomeHero from "../sub-components/home/HomeHero";
 import HomeLayout from "../sub-components/home/HomeLayout";
 import styled from "styled-components";

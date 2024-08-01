@@ -1,4 +1,3 @@
-import React from "react";
 import ProductsHero from "../sub-components/productsPage/ProductsHero";
 import ProductSection from "../sub-components/productsPage/ProductSection";
 import styled from "styled-components";

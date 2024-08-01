@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
 import { Link } from "react-router-dom";
@@ -94,7 +93,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 68px;
+    gap: 78px;
   }
 
   /* padding: 0 20px; */

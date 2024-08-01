@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
 import { Link } from "react-router-dom";
 import patern from "/assets/home/desktop/pattern-circles.svg";
-
 import blog1img from "/assets/home/desktop/image-speaker-zx9.png";
 import blog2img from "/assets/home/desktop/image-speaker-zx7.jpg";
 import blog3img from "/assets/home/desktop/image-earphones-yx1.jpg";
