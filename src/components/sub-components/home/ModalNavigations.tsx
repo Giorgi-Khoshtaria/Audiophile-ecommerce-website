@@ -90,6 +90,12 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 68px;
+  }
 
   /* padding: 0 20px; */
 `;

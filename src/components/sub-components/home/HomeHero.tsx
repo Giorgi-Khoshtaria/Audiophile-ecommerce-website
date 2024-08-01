@@ -85,6 +85,7 @@ const Information = styled.div`
     margin: 24px 0;
     @media (max-width: 768px) {
       font-size: 36px;
+      width: 350px;
     }
   }
   p {
