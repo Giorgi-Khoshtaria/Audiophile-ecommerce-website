@@ -83,6 +83,7 @@ function ProductDetails() {
           <MainImage>
             <MainImageDesktop src={product.image.desktop} alt="product" />
             <MainImageTablet src={product.image.tablet} alt="product" />
+            <MainImageMobile src={product.image.mobile} alt="product" />
           </MainImage>
           <div>
             <Title>NEW PRODUCT</Title>
@@ -137,6 +138,9 @@ function ProductDetails() {
                 <TabletImgDiv>
                   <LIImageTablet src={other.image.tablet} alt={other.name} />
                 </TabletImgDiv>
+                <MobileImgdiv>
+                  <LiimageMobile src={other.image.mobile} alt={other.name} />
+                </MobileImgdiv>
 
                 <p>{other.name}</p>
                 <OthersLink
@@ -185,6 +189,15 @@ const Information = styled.div`
     /* padding: 0 20px; */
     gap: 70px;
   }
+  @media (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* padding: 0 20px; */
+    gap: 70px;
+  }
 `;
 
 const Goback = styled(Link)`
@@ -204,6 +217,9 @@ const MainImage = styled.div`
   @media (max-width: 1440px) {
     padding: 133px 50px 146px 50px;
   }
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 const MainImageDesktop = styled.img`
   width: 349.238px;
@@ -220,6 +236,17 @@ const MainImageTablet = styled.img`
     width: 181px;
     height: 201px;
     flex-shrink: 0;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const MainImageMobile = styled.img`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    width: 327px;
+    height: 327px;
   }
 `;
 const Title = styled.h2`
@@ -247,6 +274,9 @@ const ProductName = styled.h1`
   margin-bottom: 32px;
   @media (max-width: 1440px) {
     font-size: 28px;
+  }
+  @media (max-width: 1440px) {
+    width: 327px;
   }
 `;
 
@@ -351,6 +381,12 @@ const Fearures = styled.div`
     gap: 120px;
     /* padding: 0 20px; */
   }
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 0 20px; */
+  }
   h1 {
     color: ${defaultTheme.colors.black};
     font-size: 32px;
@@ -371,11 +407,18 @@ const FeaturesText = styled.p`
   font-weight: 400;
   line-height: 25px; /* 166.667% */
   opacity: 0.5;
+  @media (max-width: 768px) {
+    width: 327px;
+  }
 `;
 const UL = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+  }
 `;
 const Li = styled.li`
   display: flex;
@@ -413,6 +456,11 @@ const Gallery = styled.div`
     gap: 15px;
     padding: 0;
   }
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 const FirsSecond = styled.div`
   display: flex;
@@ -441,6 +489,12 @@ const FirstSecondTablet = styled.div`
       border-radius: 8px;
     }
   }
+  @media (max-width: 768px) {
+    img {
+      width: 327px;
+      height: 174px;
+    }
+  }
 `;
 const ThirdImage = styled.img`
   width: 635px;
@@ -458,6 +512,11 @@ const ThirdImageTablet = styled.img`
     height: 368px;
     flex-shrink: 0;
     border-radius: 8px;
+  }
+  @media (max-width: 768px) {
+    width: 327px;
+    height: 368px;
+    flex-shrink: 0;
   }
 `;
 const Others = styled.div`
@@ -488,6 +547,12 @@ const OthersUl = styled.ul`
   @media (max-width: 1440px) {
     width: auto;
     gap: 15px;
+  }
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
   }
 `;
 const OthersLi = styled.li`
@@ -523,10 +588,26 @@ const TabletImgDiv = styled.div`
     background-color: ${defaultTheme.colors.flashwite};
     padding: 62px 36px;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 const LIImageTablet = styled.img`
   width: 148.305px;
   height: 193px;
+  flex-shrink: 0;
+`;
+const MobileImgdiv = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    background-color: ${defaultTheme.colors.flashwite};
+    padding: 12px 120px;
+  }
+`;
+const LiimageMobile = styled.img`
+  width: 86.857px;
+  height: 96px;
   flex-shrink: 0;
 `;
 const OthersLink = styled(Link)`

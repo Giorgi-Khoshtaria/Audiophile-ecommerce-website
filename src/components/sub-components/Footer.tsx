@@ -39,7 +39,7 @@ function Footer() {
           </nav>
         </Content>
         <Information>
-          <div>
+          <Infos>
             <MainInfo>
               Audiophile is an all in one stop to fulfill your audio needs.
               We're a small team of music lovers and sound specialists who are
@@ -47,7 +47,7 @@ function Footer() {
               and visit our demo facility - we’re open 7 days a week.
             </MainInfo>
             <CopyRight>Copyright 2021. All Rights Reserved</CopyRight>
-          </div>
+          </Infos>
           <Links>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -124,6 +124,12 @@ const Content = styled.div`
     align-items: flex-start;
     gap: 32px;
   }
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
 `;
 const Logo = styled.div`
   width: 143px;
@@ -135,6 +141,12 @@ const Ul = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 35px;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
 `;
 
 const Li = styled.li`
@@ -166,6 +178,11 @@ const Information = styled.div`
     display: flex;
     align-items: flex-end;
   }
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 const MainInfo = styled.p`
   width: 540px;
@@ -180,6 +197,20 @@ const MainInfo = styled.p`
   margin-top: 36px;
   @media (max-width: 1440px) {
     width: 689px;
+  }
+  @media (max-width: 768px) {
+    text-align: center;
+    width: 327px;
+  }
+`;
+const Infos = styled.div`
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 327px;
+    margin-bottom: 48px;
   }
 `;
 const CopyRight = styled.p`
@@ -197,9 +228,13 @@ const Links = styled.div`
   justify-content: center;
   gap: 16px;
   @media (max-width: 1440px) {
-    position: absolute;
-    right: 20px;
+    /* position: absolute;
+    right: 20px; */
   }
+  /* @media (max-width: 768px) {
+    text-align: center;
+    width: 327px;
+  } */
 
   svg {
     cursor: pointer;

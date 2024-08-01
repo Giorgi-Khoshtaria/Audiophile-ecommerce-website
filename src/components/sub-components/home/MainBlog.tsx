@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { defaultTheme } from "../../utils/defaultTheme";
 import mainblog from "/assets/shared/desktop/image-best-gear.jpg";
 import mainblogtablet from "/assets/shared/tablet/image-best-gear.jpg";
+import mainblogmobile from "/assets/shared/mobile/image-best-gear.jpg";
 
 function MainBlog() {
   return (
@@ -22,6 +23,7 @@ function MainBlog() {
       </Information>
       <Image src={mainblog} alt="mainblog" />
       <Imagetablet src={mainblogtablet} alt="mainblog" />
+      <Imagemobile src={mainblogmobile} alt="mainblog" />
     </Container>
   );
 }
@@ -49,6 +51,9 @@ const Information = styled.div`
   @media (max-width: 1440px) {
     width: 573px;
     text-align: center;
+  }
+  @media (max-width: 768px) {
+    width: 327px;
   }
   h1 {
     color: ${defaultTheme.colors.black};
@@ -89,6 +94,22 @@ const Imagetablet = styled.img`
     border-radius: 8px;
     display: flex;
     width: 689px;
+    height: 300px;
+    flex-shrink: 0;
+    margin-bottom: 63px;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const Imagemobile = styled.img`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    border-radius: 8px;
+    display: flex;
+    width: 327px;
     height: 300px;
     flex-shrink: 0;
     margin-bottom: 63px;

@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 interface ProductSectionProps {
   img: string;
   imgtablet: string;
+  imgmobile: string;
   name: string;
   description: string;
   index: number;
@@ -17,6 +18,7 @@ interface ProductSectionProps {
 function ProductSection({
   img,
   imgtablet,
+  imgmobile,
   name,
   description,
   index,
@@ -34,6 +36,7 @@ function ProductSection({
       <MainImage>
         <MainImageDesktop src={img} alt="main-image" />
         <MainImagetablet src={imgtablet} alt="main-image" />
+        <MainImageMobole src={imgmobile} />
       </MainImage>
       <Info>
         {index === 0 && <Title>NEW PRODUCT</Title>}
@@ -79,6 +82,11 @@ const MainImage = styled.div`
     padding: 0;
     border-radius: 8px;
   }
+  @media (max-width: 768px) {
+    width: 327px;
+    height: 352px;
+    flex-shrink: 0;
+  }
 `;
 const MainImageDesktop = styled.img`
   width: 349.238px;
@@ -94,6 +102,18 @@ const MainImagetablet = styled.img`
     display: flex;
     width: 220px;
     height: 243px;
+    flex-shrink: 0;
+  }
+  @media (max-width: 7680px) {
+    display: none;
+  }
+`;
+const MainImageMobole = styled.img`
+  display: none;
+  @media (max-width: 7680px) {
+    display: flex;
+    width: 327px;
+    height: 352px;
     flex-shrink: 0;
   }
 `;
@@ -131,6 +151,10 @@ const ProductName = styled.h1`
   text-transform: uppercase;
   margin-bottom: 32px;
   width: 445px;
+  @media (max-width: 768px) {
+    font-size: 28px;
+    width: 327px;
+  }
 `;
 
 const Description = styled.p`
@@ -142,6 +166,9 @@ const Description = styled.p`
   line-height: 25px; /* 166.667% */
   opacity: 0.5;
   margin-bottom: 32px;
+  @media (max-width: 768px) {
+    width: 327px;
+  }
 `;
 
 const Box = styled.div`

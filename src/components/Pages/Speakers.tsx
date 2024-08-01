@@ -22,7 +22,8 @@ function Speakers() {
               <ProductSection
                 key={item.id}
                 img={item.image.desktop}
-                imgtablet={item.image.tablet} // Assuming you want to use the desktop image
+                imgtablet={item.image.tablet}
+                imgmobile={item.image.mobile} // Assuming you want to use the desktop image
                 name={item.name}
                 description={item.description}
                 index={index}

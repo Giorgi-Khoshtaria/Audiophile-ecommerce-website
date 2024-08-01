@@ -134,6 +134,9 @@ const Title = styled.h1`
   line-height: 36px;
   letter-spacing: 1.143px;
   text-transform: uppercase;
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 const Text = styled.p`
@@ -145,6 +148,9 @@ const Text = styled.p`
   opacity: 0.5;
   margin-top: 24px;
   margin-bottom: 33px;
+  @media (max-width: 768px) {
+    width: 263px;
+  }
 `;
 
 const ItemsDiv = styled.div`
@@ -154,6 +160,12 @@ const ItemsDiv = styled.div`
   align-items: stretch;
   justify-content: center;
   margin-bottom: 46px;
+  border-radius: 8px;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
 `;
 
 const Itemwrapper = styled.div`
@@ -162,6 +174,9 @@ const Itemwrapper = styled.div`
   flex-direction: column;
   background: ${defaultTheme.colors.flashwite};
   height: 100%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const Items = styled.div`
   min-height: 133px;
@@ -169,6 +184,7 @@ const Items = styled.div`
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+  border-radius: 8px;
 `;
 const Grandtotal = styled.div`
   display: flex;
@@ -177,6 +193,9 @@ const Grandtotal = styled.div`
   padding: 41px 68px 41px 33px;
   background-color: ${defaultTheme.colors.black};
   background-size: 100%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   h3 {
     color: ${defaultTheme.colors.white};
     font-size: 15px;

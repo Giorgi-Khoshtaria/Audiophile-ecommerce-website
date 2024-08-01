@@ -69,7 +69,7 @@ function Information() {
         <h1>CHECKOUT</h1>
         <Billing>
           <h2>Billing Details</h2>
-          <div>
+          <FlexDiv>
             <Details>
               <FlexForInputs>
                 <Label htmlFor="name">Name</Label>
@@ -105,7 +105,7 @@ function Information() {
                 required
               />
             </FlexForInputs>
-          </div>
+          </FlexDiv>
         </Billing>
         <ShipingInfo>
           <h2>shipping info</h2>
@@ -256,6 +256,9 @@ const Informations = styled.div`
   background-color: ${defaultTheme.colors.white};
   margin-bottom: 141px;
   border-radius: 8px;
+  @media (max-width: 768px) {
+    margin-bottom: 32px;
+  }
 
   h1 {
     color: ${defaultTheme.colors.black};
@@ -287,10 +290,27 @@ const Details = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+`;
+const FlexDiv = styled.div`
+  @media (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
 `;
 const FlexForInputs = styled.div`
   display: flex;
   flex-direction: column;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const Label = styled.label`
   color: ${defaultTheme.colors.black};
@@ -316,6 +336,9 @@ const Input = styled.input`
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.25px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
   /* padding-left: 24px; */
   &::placeholder {
@@ -385,6 +408,11 @@ const PaymentDetails = styled.div`
   display: flex;
   align-items: top;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
 `;
 const PaymentDiv = styled.div`
   display: flex;
@@ -420,6 +448,12 @@ const EmoneyMethods = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 24px;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
 `;
 const CheckDiv = styled.div`
   display: flex;

@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { defaultTheme } from "../../utils/defaultTheme";
 import hero from "/assets/home/desktop/hero.png";
-import herotablet from "/assets/home/tablet/image-header.jpg"; // Updated path
+import herotablet from "/assets/home/tablet/image-header.jpg";
+import heromobile from "/assets/home/mobile/image-header.jpg"; // Updated path
 import data from "../../../data.json";
 
 function HomeHero() {
@@ -24,7 +25,8 @@ function HomeHero() {
         </Information>
 
         <Img src={hero} alt="homepagehero" />
-        <Imagetablet src={herotablet} />
+        <Imagetablet src={herotablet} alt="homepagehero" />
+        <ImageMobile src={heromobile} alt="homepagehero" />
       </Wrapper>
     </Container>
   );
@@ -59,6 +61,11 @@ const Information = styled.div`
     top: 126px;
     text-align: center;
   }
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
   h2 {
     color: ${defaultTheme.colors.white};
     font-size: 14px;
@@ -76,6 +83,9 @@ const Information = styled.div`
     letter-spacing: 2px;
     text-transform: uppercase;
     margin: 24px 0;
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
   }
   p {
     width: 349px;
@@ -85,6 +95,9 @@ const Information = styled.div`
     line-height: 25px;
     opacity: 0.75;
     margin-bottom: 40px;
+    @media (max-width: 768px) {
+      width: 328px;
+    }
   }
 `;
 
@@ -113,6 +126,17 @@ const Imagetablet = styled.img`
   @media (max-width: 1440px) {
     display: flex;
     height: 729px;
+    /* width: 100%; */
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const ImageMobile = styled.img`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    height: 600px;
     /* width: 100%; */
   }
 `;

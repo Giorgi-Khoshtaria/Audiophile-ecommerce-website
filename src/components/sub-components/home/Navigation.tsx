@@ -94,6 +94,12 @@ const Container = styled.div`
   @media (max-width: 1440px) {
     width: auto;
   }
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 68px;
+  }
 
   /* padding: 0 20px; */
 `;
@@ -107,6 +113,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   @media (max-width: 1440px) {
     width: 223px;
+    height: 165px;
+    flex-shrink: 0;
+  }
+  @media (max-width: 768px) {
+    width: 327px;
     height: 165px;
     flex-shrink: 0;
   }

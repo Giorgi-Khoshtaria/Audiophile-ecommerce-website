@@ -62,4 +62,7 @@ const Goback = styled(Link)`
     opacity: 1;
     color: ${defaultTheme.colors.peru};
   }
+  @media (max-width: 768px) {
+    padding-left: 30px;
+  }
 `;
