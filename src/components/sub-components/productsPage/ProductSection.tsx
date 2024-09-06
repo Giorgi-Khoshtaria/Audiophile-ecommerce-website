@@ -88,28 +88,35 @@ const MainImage = styled.div`
   }
 `;
 const MainImageDesktop = styled.img`
+  display: flex;
   width: 349.238px;
   height: 386px;
   flex-shrink: 0;
+
   @media (max-width: 1440px) {
     display: none;
   }
 `;
+
 const MainImagetablet = styled.img`
   display: none;
-  @media (max-width: 1440px) {
+
+  @media (max-width: 1440px) and (min-width: 768px) {
     display: flex;
     width: 220px;
     height: 243px;
     flex-shrink: 0;
   }
-  @media (max-width: 7680px) {
+
+  @media (max-width: 768px) {
     display: none;
   }
 `;
+
 const MainImageMobole = styled.img`
   display: none;
-  @media (max-width: 7680px) {
+
+  @media (max-width: 768px) {
     display: flex;
     width: 327px;
     height: 352px;
